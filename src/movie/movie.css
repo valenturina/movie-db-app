@@ -1,0 +1,51 @@
+
+
+.movie-card {
+    width: 450px;
+    height: 280px;
+    display: flex;
+    align-content: stretch;
+    gap: 20px;
+    outline: solid 2px darkgray;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.movie-card__poster {
+    flex-basis: 183px;
+}
+.movie-card__poster img {
+    width: 183px;
+
+}
+.movie-card__text-content {
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    font-size: 12px;
+    color: black;
+    gap: 7px;
+}
+
+.movie-card__text-content span {
+    display: block;
+    line-height: 22px;
+}
+
+.movie-card__title {
+    margin-top: 10px;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.movie-card__data {
+    color: #827E7E;
+}
+
+.movie-card__genres {
+
+}
+
+.movie-card__overview {
+    margin-top: 5px;
+}

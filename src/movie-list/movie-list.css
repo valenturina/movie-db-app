@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 21px 32px;
+    margin: 0 auto;
+    max-width: 1010px;
+    background-color: rgba(86,115,137,0.67);
+    gap: 36px;
+}
