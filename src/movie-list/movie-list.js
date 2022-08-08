@@ -5,25 +5,38 @@ import './movie-list.css';
 
 export default class MovieList extends React.Component {
 
-
     render () {
         const {moviesList} = this.props;
 
+        if (moviesList.length !== 0) {
+            const movies = moviesList.map((movie) => {
+                const {id, ...movieProps} = movie;
+                return (
+                    <Movie
+                        key={id}
+                        movieProps={movieProps}
+                    />
+                )
+            })
+            return (
+                <ul className='container'>
+                    {movies}
+                </ul>
+            )
 
-        // const movies = moviesList.map((movie) => {
-        //     const {id, ...movieProps} = movie;
-        //     return (
-        //         <Movie
-        //         key={id}
-        //         movieProps={movieProps}
-        //         />
-        //     )
-        // })
-        return (
-            <ul className='container'>
-                {/*{movies}*/}
-                <Movie/>
-            </ul>
-        )
+        } else {
+            return (
+                <ul className='container'>
+                    <li>
+                        <span>
+                            фильмов нет но вы держитесь
+                        </span>
+                    </li>
+                </ul>
+            )
+        }
+
+
+
     }
 }
