@@ -1,7 +1,7 @@
 export default class TMDBService {
 
     _apiBase = 'https://api.themoviedb.org/3/search/movie?api_key=f025d328042d2ed742a7663e968247b0&language=en-US';
-
+    _apiGenres = 'https://api.themoviedb.org/3/genre/movie/list?api_key=f025d328042d2ed742a7663e968247b0';
 
     async getResource(url) {
         const response = await fetch(url, {
@@ -30,18 +30,9 @@ export default class TMDBService {
         return moviesReturn
     }
 
-    // _transformMovie = (movie) => {
-    //
-    //     return {
-    //         id: movie.id,
-    //         title: movie.title,
-    //         posterPath: movie.poster_path,
-    //         overview: movie.overview,
-    //         popularity: movie.popularity,
-    //         releaseDate: movie.release_date,
-    //         voteAverage: movie.vote_average,
-    //         voteCount: movie.vote_count,
-    //         pageTotal: movie.total_results
-    //     }
-    // }
+    async getGenres() {
+        const {genres} = await this.getResource(this._apiGenres);
+        return genres;
+    }
+
 }

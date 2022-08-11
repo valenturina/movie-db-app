@@ -1,5 +1,6 @@
 import React from "react";
 import {debounce} from 'lodash';
+import PropTypes from "prop-types";
 
 import "./search-bar.css"
 
@@ -33,4 +34,11 @@ export default class SearchBar extends React.Component {
             </form>
         )
     }
+}
+
+SearchBar.defaultProps = {
+    onSearchMovie: () => {}
+}
+SearchBar.propTypes = {
+    onSearchMovie: PropTypes.func
 }
